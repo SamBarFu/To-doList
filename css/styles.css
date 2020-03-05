@@ -1,0 +1,165 @@
+
+body{
+    font-family: 'Spartan', sans-serif;    
+    background-image: url("https://images2.alphacoders.com/994/994064.jpg");
+    background-size: cover;
+    margin: 0;
+    color: tan;
+}
+
+/* barra de navegacion */
+
+figure{
+    margin: 1em;
+}
+
+.log{
+    width: 3em;
+    height: 3em;
+}
+
+.cont_header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cont_log{
+    display: flex;    
+}
+
+.marca{
+    font-family: 'Trade Winds', cursive;
+    color: goldenrod;
+}
+
+.nav_item{
+    display: inline-block;
+    padding: 1em 0.5em;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: tan;
+}
+
+.nav_item:hover{
+    color: darkorange;
+}
+
+/* contenido de la pagina */
+
+.main_container{
+    margin: 0 3em;  
+    margin-bottom: 10em;  
+}
+
+.acti{
+    background-color: rgba(222, 184, 135, 0.5);
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 3em;
+    padding: 1em;   
+    border-radius: 5px;
+    color: black;
+}
+
+.limit_date{
+    margin-bottom: 0;
+}
+
+.description{    
+    margin-left: 1.5em;
+}
+
+
+.fas{
+    margin: 1em;
+    font-size: 1.3em;
+}
+
+.fas:hover{
+    color: goldenrod;
+    cursor: pointer;
+}
+
+/* footer */
+
+footer{
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+    background-color: darkslategray;
+}
+
+.cont_footer{
+    text-align: center;    
+}
+
+.cont_redes i{
+    margin: 1em;
+    font-size: 1.5em;
+    color: tan;
+}
+
+/* agregar tarea */
+
+.cont_form{
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background-color: rgba(222, 184, 135, 0.5);
+    padding: 2em;
+    margin: 1em;
+    border-radius: 10px;
+}
+
+input, textarea{
+    height: 3em;
+    margin: 1em;
+    margin-bottom: 3em;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+}
+
+label{
+    color: black;
+}
+
+.btn_add{   
+    border: none;
+    border-radius: 5px;
+    width: 40%;
+    font-size: 1em;
+    background-color: sandybrown;
+    color: white;
+    margin: 1em auto;
+}
+
+.btn_add:hover{
+    background-color: darkkhaki;
+}
+
+/* meadia query */
+
+@media (max-width: 600px){
+    .cont_header{
+        display: block;
+    }
+
+    .nav_item{
+        display: block;
+    }
+
+    .main_container{
+        margin: 0 1em;
+    }
+
+    .acti{
+        margin: 1em 1em;
+        padding: 1em;   
+    }
+}
