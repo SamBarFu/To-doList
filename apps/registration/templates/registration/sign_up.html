@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign in{% endblock title %}
+
+{% block navbar %}
+{% load static %}
+<!-- navbar -->
+<header class="cont_header navbar-sign-up">
+    <div class="cont_log">
+        <a href="{% url 'home' %}">
+            <img class="logo"
+                src="{% static 'img\4fd5d42991cfcf688365ad3227e0cc31-yellow-check-mark-icon-by-vexels.png' %}"
+                alt="">
+            <h1 class="name-logo"">To-doList</h1>
+        </a>
+    </div>
+</header>
+{% endblock navbar %}
+
+{% block content %}
+<!-- contenido -->
+<div class="">
+    <div class="cont_form cont-login">
+        <form class="form form-sign-up" action="#" method="post">
+            {% csrf_token %}
+            <h1 class="form-title">Sign Up</h1>
+            <!-- username -->
+            <label for="{{form.username.name}}"><b>{{form.username.label}}</b></label>
+            <input class="field field-sign" type="text" name="{{form.username.name}}" id="" required>    
+            <!-- first name -->        
+            <label for="{{form.first_name.name}}"><b>{{form.first_name.label}}</b></label>
+            <input class="field field-sign" type="text" name="{{form.first_name.name}}" id="" required>
+            <!-- last name -->
+            <label for="{{form.last_name.name}}"><b>{{form.last_name.label}}</b></label>
+            <input class="field field-sign" type="text" name="{{form.lastname.name}}" id="" required>
+            <!-- email -->
+            <label for="{{form.email.name}}"><b>{{form.email.label}}</b></label>
+            <input class="field field-sign" type="email" name="{{form.email.name}}" id="" required>
+            <!-- password -->
+            <label for="{{form.password1.name}}"><b>{{form.password1.label}}</b></label>
+            <input class="field field-sign" type="password" name="{{form.password1.name}}" id="" required>
+            <!-- confirm password -->
+            <label for="{{form.password2.name}}"><b>{{form.password2.label}}</b></label>
+            <input class="field field-sign" type="password" name="{{form.password2.name}}" id="" required>
+            <!-- button sign in -->
+            <button class="btn btn-sign-in">Sign in</button>
+            <!-- <label for=""><b>Birthday</b></label>
+            <div class="birthday">
+                <div class="box">
+                    <select class="field-day" name="" id="">
+                        <option value="Day" hidden>Day</option>
+                    </select>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="box">
+                    <select class="field-month" name="" id="">
+                        <option value="Month" hidden>Month</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <select class="field-year" name="" id="">
+                        <option value="Year" hidden>Year</option>
+                    </select>
+                </div>
+            </div> -->            
+        </form>
+    </div>
+</div>
+{% endblock content %}
+
+{% block footer %}
+<footer class="footer">
+    <div class="cont_footer">
+        <!-- <h1 class="name-logo">To-doList</h1> -->
+        <div class="cont_redes">
+            <a href="https://www.facebook.com/SamBarFu" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/SamBarFu" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/sambarfu" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <small>&copy; 2020, SamSoft</small>
+    </div>
+</footer>
+{% endblock footer %}
+
+{% block script %}
+{% load static %}
+<script src="{% static 'js/sign.js' %}"></script>
+{% endblock script %}

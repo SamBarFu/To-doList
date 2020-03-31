@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock title %}
+
+{% block navbar %}{% endblock navbar %}
+
+<!-- contenido -->
+{% block content %}
+{% load static %}
+<div class="main_container">
+    <div class="cont-home">
+        <div class="cont_log">
+            <a href="#">
+                <img class="logo"
+                    src="{% static 'img\4fd5d42991cfcf688365ad3227e0cc31-yellow-check-mark-icon-by-vexels.png' %}"
+                    alt="">
+                <h1 class="name-logo">To-doList</h1>
+            </a>
+        </div>
+        <div class="info-home">
+            <h1 class="info-title">Lorem ipsum dolor</h1>
+            <p class="info-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore fugit quo
+                exercitationem aut placeat officia id neque, nobis asperiores numquam. Esse provident distinctio,
+                corporis necessitatibus tempora accusamus labore? Fugit, voluptatem.</p>
+            <a class="info-btn nav_item btn-second" href="{% url 'sign_in' %}">Sign in</a>
+            <a class="info-btn nav_item btn-primary" href="{% url 'sign_up' %}">Sign up</a>
+            <div class=" info-footer cont_redes">
+                <a href="https://www.facebook.com/SamBarFu" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/SamBarFu" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/sambarfu" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+{% block footer %}
+<footer class="cont_footer_home">
+    <small>&copy; SamSoft 2020</small>
+</footer>
+{% endblock footer %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Add Task {% endblock %}
+
+{% block content %}
+<div class="main_container">
+    <h2>Agregar nueva tarea</h2>
+    <hr>
+    <div class="cont_add">
+        <div class="cont_form">
+            <form class="form form-add-task" action="#" method="POST">
+                {% csrf_token %}
+                {{ form.user }}
+                <label for="{{ form.name_task.name }}"><b>{{ form.name_task.label }}</b></label>
+                <input class="field" type="text" name="{{ form.name_task.name }}" id="" required>
+                <label for="{{ form.description.name }}"><b>{{ form.description.label }}</b></label>
+                <input class="field" type="text" name="{{ form.description.name }}" id=""></input>
+                <label for="{{ form.max_date.name }}"><b>{{ form.max_date.label }}</b></label>
+                <input class="field date-task" type="date" name="{{ form.max_date.name }}" required>
+                <button class="btn btn-add"><i class="fas fa-plus">Agregar</i></button>
+                <!--  <label for=""><b>Tarea</b></label>
+                <input class="field" type="text" name="" id="" required>
+                <label for=""><b>Descripcion</b></label>
+                <textarea class="field" name="" id=""></textarea>
+                <label for=""><b>Fecha limite</b></label>
+                <input class="field date-task" type="date" required>
+                <button class="btn btn-add"><i class="fas fa-plus">Agregar</i></button> -->
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

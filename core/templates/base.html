@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo-List | {% block title %}{% endblock title%}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'vendor/fontawesome-free-5.11.2-web/css/all.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Spartan|Trade+Winds&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body class="body-bg">
+    {% block navbar %}
+    <!-- navbar -->
+    <header class="cont_header">
+        <div class="cont_log">
+            <a href="#">
+                <img class="logo"
+                    src="{% static 'img\4fd5d42991cfcf688365ad3227e0cc31-yellow-check-mark-icon-by-vexels.png' %}"
+                    alt="">
+                <h1 class="name-logo"">To-doList</h1>
+            </a>
+            <i class=" fas fa-bars" onclick="expand(this)"></i>
+        </div>
+        <nav class="cont_nav">
+            {% if request.user.is_authenticated %}
+            <a class="nav_item" href="{% url 'task' %}">Tasks</a>
+            <a class="nav_item" href="{% url 'add task' %}">Add</a>
+            <a class="nav_item" href=""><i class="fas fa-user"></i>{{request.user.get_full_name}}</a>
+            <a class="nav_item" href="{% url 'sign_out' %}">Sign out</a>
+            {% else %}
+            <a class="nav_item btn btn-primary" href="{% url 'task' %}">Sign in</a>
+            <a class="nav_item btn btn-primary" href="{% url 'add task' %}">Sign up</a>
+            {% endif %}
+        </nav>
+    </header>
+    {% endblock navbar%}
+    <!-- contenido -->
+    {% block content %}
+    {% endblock content %}
+    <!-- footer -->
+    {% block footer %}
+    <footer class="footer">
+        <div class="cont_footer">
+            <div class="cont_redes">
+                <a href="https://www.facebook.com/SamBarFu" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/SamBarFu" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/sambarfu" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <small>&copy; SamSoft 2020</small>
+        </div>
+    </footer>
+    {% endblock footer %}
+
+    <script src="{% static 'js/index.js' %}"></script>
+    {% block script %}{% endblock script %}
+</body>
+
+</html>

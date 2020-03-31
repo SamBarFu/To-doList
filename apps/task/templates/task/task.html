@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block title %} Task {% endblock title %}
+
+{% block content %}
+<div class="cont-popup" onclick="closePopUp(2)">
+    <div class="popup-delete">
+        <p class="msg-popup">Desea eliminar la tarea ?</p>
+        <div class="btn-popup">            
+            <a id="id-task" class="btn btn-third">Eliminar</a>
+            <a class="btn btn-cancel" onclick="closePopUp(2)">Salir</a>
+        </div>
+    </div>
+</div>
+<div class="main_container">
+    <!-- tarea por hacer -->
+    <div class="not_completed">
+        <h3>Tasks to do</h3>
+        <hr>
+        {% for task in tasks %}
+        {% if task.state == 'NC' and task.user.id == request.user.id %}
+        <div class="task">
+            <div>
+                <h4 id='{{task.id}}' class="name-task" onclick="expandTaskNotCompleted(this)">{{ task.name_task }}</h4>
+                <div class="task-not-completed">
+                    <p class="description-not-completed">{{ task.description }}</p>
+                    <time datetime="2020-6-8" class="limit_date-not-completed" {{task.dateNow}}"><i
+                        class="fas fa-clock"></i>{{ task.max_date }}</time>                    
+                </div>
+            </div>
+            <div class="cont_icon">
+                <a href="{% url 'task_finish' task.id %}"><i class="fas fa-check"></i></a>              
+                <!-- <i onclick="showPopUp(this)"><i class="fas fa-trash"></i></a> -->
+                <a href="{% url 'task_delete' task.id %}"><i class="fas fa-trash"></i></a>
+            </div>
+        </div>
+        <!-- <div class="cont-popup" onclick="closePopUp(1)">
+            <div class="popup-delete">
+                <p class="msg-popup">Desea eliminar la tarea {{ task.name_task }} ?</p>
+                <div class="btn-popup">
+                    <a href="{% url 'task_delete' task.id %}" class="btn btn-third">Eliminar</a>
+                    <a class="btn btn-cancel" onclick="closePopUp(1)">Salir</a>
+                </div>
+            </div>
+        </div> -->
+        {% endif %}
+        {% endfor %}
+    </div>
+    <br>
+    <!-- tareas completadas -->
+    <div class="completed">
+        <h3>Tasks completed</h3>
+        <hr>
+        {% for task in tasks %}
+        {% if task.state == 'C' and task.user.id == request.user.id %}
+        <div class="task">
+            <div>
+                <h4 id='{{task.id}}' class="name-task" onclick="expandTaskCompleted(this)">{{ task.name_task }}</h4>
+                <div class="task-completed">
+                    <p class="description-not-completed">{{ task.description }}</p>
+                </div>
+            </div>
+            <div class="cont_icon">
+                <!-- <i onclick="showPopUp(this)"><i class="fas fa-trash"></i></a> -->
+                <a href="{% url 'task_delete' task.id %}"><i class="fas fa-trash"></i></a>
+            </div>
+        </div>
+        <!-- <div class="cont-popup" onclick="closePopUp(2)">
+            <div class="popup-delete">
+                <p class="msg-popup">Desea eliminar la tarea {{ task.name_task }}?</p>
+                <div class="btn-popup">
+                    <a href="{% url 'task_delete' task.id %}" class="btn btn-third">Eliminar</a>
+                    <a class="btn btn-cancel" onclick="closePopUp(2)">Salir</a>
+                </div>
+            </div>
+        </div> -->
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
+
+{% block completed %}
+{% endblock completed %}
+
+{% block script %}
+{% load static %}
+<script src="{% static 'js/task.js' %}"></script>
+{% endblock script %}

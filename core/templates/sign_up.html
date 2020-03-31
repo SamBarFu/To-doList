@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+<!-- navbar -->
+<header class="cont_header">
+    <div class="cont_log">
+        <a href="#">
+            <img class="logo" src="img/4fd5d42991cfcf688365ad3227e0cc31-yellow-check-mark-icon-by-vexels.png" alt="">
+            <h1 class="name-logo">To-doList</h1>
+        </a>
+        <i class="fas fa-bars" onclick="expand(this)"></i>
+    </div>
+    <nav class="cont_nav">
+        <a class="nav_item" href="task.html">Tasks</a>
+        <a class="nav_item" href="add_task.html">Add</a>
+        <a class="nav_item" href="">About</a>
+        <a class="nav_item btn" href="Sign_in.html">Sign in</a>
+        <a class="nav_item btn btn-primary" href="sign_up.html">Sign up</a>
+        <a class="nav_item" href=""><i class="fas fa-user"></i>Samuel Barberena</a>
+    </nav>
+</header>
+<!-- contenido -->
+<div class="cont-sign-up">
+    <div class="cont_form cont-login">
+        <form class="form form-sign-up" action="#" method="post">
+            <h1 class="form-title">Sign Up</h1>
+            <label for=""><b>Name</b></label>
+            <input class="field field-sign" type="text" name="" id="" required>
+            <label for=""><b>Lastname</b></label>
+            <input class="field field-sign" type="text" name="" id="" required>
+            <label for=""><b>Email</b></label>
+            <input class="field field-sign" type="email" name="" id="" required>
+            <label for=""><b>Birthday</b></label>
+            <div class="birthday">
+                <div class="box">
+                    <select class="field-day" name="" id="">
+                        <option value="Day" hidden>Day</option>
+                    </select>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="box">
+                    <select class="field-month" name="" id="">
+                        <option value="Month" hidden>Month</option>
+                    </select>
+                </div>
+                <div class="box">
+                    <select class="field-year" name="" id="">
+                        <option value="Year" hidden>Year</option>
+                    </select>
+                </div>
+
+            </div>
+            <label for=""><b>Password</b></label>
+            <input class="field field-sign" type="password" name="" id="" required>
+            <label for=""><b>Confirm password</b></label>
+            <input class="field field-sign" type="password" name="" id="" required>
+            <input class="btn btn-sign-in" type="button" value="Sign in">
+        </form>
+    </div>
+</div>
+<footer class="footer">
+    <div class="cont_footer">
+        <!-- <h1 class="name-logo">To-doList</h1> -->
+        <div class="cont_redes">
+            <a href="https://www.facebook.com/SamBarFu" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/SamBarFu" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/sambarfu" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+        <small>&copy; 2020, SamSoft</small>
+    </div>
+</footer>
+
+
+<script src="js/sign.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My to do list</title>
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="stylesheet" href="vendor/fontawesome-free-5.11.2-web/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Spartan|Trade+Winds&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="body-bg">
+    <!-- navbar -->
+    <header class="cont_header">
+        <div class="cont_log">
+            <a href="#">
+                <img class="logo" src="img/4fd5d42991cfcf688365ad3227e0cc31-yellow-check-mark-icon-by-vexels.png"
+                    alt="">
+                <h1 class="name-logo">To-doList</h1>
+            </a>
+            <i class="fas fa-bars" onclick="expand(this)"></i>
+        </div>
+        <nav class="cont_nav">
+            <a class="nav_item" href="#">Tasks</a>
+            <a class="nav_item" href="add_task.html">Add</a>            
+            <a class="nav_item" href=""><i class="fas fa-user"></i>Samuel Barberena</a>
+        </nav>
+    </header>
+    <!-- contenido -->
+    <div class="main_container">
+        <!-- tarea por hacer -->
+        <div class="not_completed">
+            <h3>Tasks to do</h3>
+            <hr>
+            <div class="task">
+                <div>
+                    <h4 class="name-task" onclick="expandTaskNotCompleted(this)">Estudiar Python</h4>
+                    <div class="task-not-completed">
+                        <p class="description-not-completed">tengo que estudiar python porque es el futuro.</p>
+                        <time datetime="2020-6-8" class="limit_date-not-completed"><i class="fas fa-clock"></i>June 08
+                            de 2020</time>
+                    </div>
+                </div>
+                <div class="cont_icon">
+                    <i class="fas fa-check"></i>
+                    <i class="fas fa-trash"></i>
+                </div>
+            </div>
+        </div>
+        <br>
+        <!-- tareas completadas -->
+        <div class="completed">
+            <h3>Tasks completed</h3>
+            <hr>
+            <div class="task">
+                <div>
+                    <h4 class="name-task" onclick="expandTaskCompleted(this)">Estudiar Python</h4>
+                    <div class="task-completed">
+                        <p class="description-not-completed">tengo que estudiar python porque es el futuro.</p>
+                        <time datetime="2020-6-8" class="limit_date-not-completed"><i class="fas fa-clock"></i>June 08
+                            de 2020</time>
+                    </div>
+                </div>
+                <div class="cont_icon">
+                    <i class="fas fa-trash"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="cont_footer">
+            <div class="cont_redes">
+                <a href="https://www.facebook.com/SamBarFu" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/SamBarFu" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/sambarfu" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <small>&copy; SamSoft 2020</small>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+
+</html>
